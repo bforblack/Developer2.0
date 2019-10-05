@@ -16,7 +16,7 @@ import com.VShare.Project.modal.VshareData;
 @Transactional
 public class VshareFileCreationImpl implements VshareFileCreationService {
 @Autowired
-NewDataEntry newDataEntry;
+private NewDataEntry newDataEntry;
 
 	
 	private static final String folder ="F:\\VshareDataPath\\";
@@ -24,7 +24,7 @@ NewDataEntry newDataEntry;
 	
 	
 	@Override
-	public void fileCreation(VshareData vshare) {
+	public String fileCreation(VshareData vshare) {
 	
 		Path path = Paths.get(folder+vshare.getUserName());
 		try {
@@ -32,7 +32,12 @@ NewDataEntry newDataEntry;
 		}catch (Exception e) {
 		System.out.println(e);
 		}
-		newDataEntry.CreateDataEntry(vshare);
+		newDataEntry.createDataEntry(vshare);
+
+	return newDataEntry.lastInsetedId();
 	}
+
+
+
 
 }

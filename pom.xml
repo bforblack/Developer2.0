@@ -19,6 +19,21 @@
 	</properties>
 
 	<dependencies>
+		
+           
+ 	<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.8.2</version>
+</dependency>
+            
+            
+             <dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20160810</version>
+</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -28,11 +43,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
-		<dependency>
- 	 <groupId>com.VShare.Project.Shareable</groupId>
-  <artifactId>com.VShare.Project.Shareable</artifactId>
- 	 <version>0.0.1-SNAPSHOT</version>
- 	</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -71,6 +81,14 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			 <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.1.1</version>
+            <configuration>
+                <attachClasses>true</attachClasses>
+                <classesClassifier>classes</classesClassifier>
+            </configuration>
+        </plugin>
 		</plugins>
 	</build>
 </project>
